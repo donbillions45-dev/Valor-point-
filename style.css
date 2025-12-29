@@ -1,0 +1,615 @@
+ /* style.css */
+
+:root {
+    --primary-color: #0D3B66; /* Deep Blue */
+    --accent-color: #F4D35E; /* Gold */
+    --background-color: #FFFFFF; /* White */
+    --text-color: #333;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 450px; /* Limits the width on larger screens */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.input-group label {
+    display: block; /* Make label take its own line */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+/* Focus style for input fields */
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: var(--accent-color);
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(244, 211, 94, 0.3); /* Custom focus ring */
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    margin-top: 15px;
+}
+
+.primary-btn:hover {
+    background-color: #082a4d; /* Darker shade of primary on hover */
+}
+
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.message.error {
+    background-color: #f8d7da; /* Light red background */
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+.message.success {
+    background-color: #d4edda; /* Light green background */
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+p {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        margin: 15px; /* Add some margin on smaller screens */
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .input-group input {
+        font-size: 15px;
+    }
+    .btn {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+.dashboard-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.dashboard-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.balance-display {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#referralLink {
+    width: calc(100% - 100px); /* Adjust width to make space for copy button */
+    display: inline-block;
+    vertical-align: middle;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.copy-btn {
+    width: 90px; /* Fixed width for copy button */
+    display: inline-block;
+    vertical-align: middle;
+    padding: 12px 0;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.copy-btn:hover {
+    background-color: #e6c556; /* Slightly darker gold */
+}
+
+#referredUsersList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#referredUsersList li {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.logout-btn {
+    background-color: #dc3545; /* Red for logout */
+    margin-top: 30px;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Secondary button style (for Withdraw Request, etc.) */
+.secondary-btn {
+    background-color: #6c757d; /* Grey */
+    color: #fff;
+    margin-top: 10px;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Adjustments for input-group containing referral link and copy button */
+.dashboard-section .input-group {
+    display: flex;
+    margin-bottom: 0; /* Remove bottom margin from this input group */
+}
+.dashboard-section .input-group input {
+    flex-grow: 1; /* Allow input to take available space */
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.dashboard-section .input-group .btn {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    width: auto;
+    min-width: 90px; /* Ensure button has a minimum width */
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+/* Responsive adjustment for input-group within dashboard section */
+@media (max-width: 600px) {
+    .dashboard-section .input-group {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+    .dashboard-section .input-group input,
+    .dashboard-section .input-group .btn {
+        width: 100%;
+        border-radius: 5px; /* Reapply full border-radius */
+        margin-top: 5px; /* Space between stacked elements */
+    }
+    .dashboard-section .input-group input {
+        margin-bottom: 5px;
+    }
+}
+    .faq-section, .section-content {
+        margin-bottom: 20px;
+        text-align: left;
+    }l
+
+  {
+ * Main main-content
+.main-content {
+  margin-left: 230px;
+  padding: 90px 30px 30px;
+  width: 100%;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #0D3B66;
+  .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+}
+
+body {
+  background: #f4f6f8;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 60px;
+  background: #0D3B66;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ================= LAYOUT ================= */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background: #0D3B66;
+  color: #fff;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.user-details {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.profile-pic-large {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0D3B66;
+}
+
+.detail-item {
+  margin-bottom: 8px;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .user-details {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* Add to your existing style.css */
+
+.settings-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.settings-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.profile-pic-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px auto;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(244, 211, 94, 0.3);
+}
+
+.profile-pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.upload-icon:hover {
+    background-color: #082a4d;
+}
+
+.upload-icon .material-icons {
+    font-size: 24px;
+}
+
+.settings-section .btn {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+/* Add to your existing style.css */
+
+.admin-container {
+    max-width: 900px; /* Wider container for admin panel */
+}
+
+.admin-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.admin-section h2, .admin-section h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.admin-section .input-group {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end; /* Align button with input */
+    margin-bottom: 15px;
+}
+.admin-section .input-group input {
+    flex-grow: 1;
+}
+.admin-section .input-group button {
+    flex-shrink: 0;
+    margin-top: 0; /* Override default button margin */
+}
+
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.user-list li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 0.85em;
+    min-width: 80px;
+    margin-top: 0; /* Override default button margin */
+}
+
+.user-detail-panel {
+    border: 2px solid var(--accent-color);
+    background-color: #fffdf5; /* Light yellow background */
+}
+
+.user-detail-panel h3 {
+    margin-top: 25px;
+}
+
+.user-detail-panel p {
+    margin-bottom: 8px;
+}
+
+.user-detail-panel ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.action-group {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.action-group .input-group {
+    margin-bottom: 15px;
+}
+
+.action-group button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustment for admin sections */
+@media (max-width: 600px) {
+    .admin-section .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .admin-section .input-group input,
+    .admin-section .input-group button {
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .user-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .user-list li button {
+        margin-top: 10px;
+        margin-left: 0;
+        width: 100%;
+    }
+}

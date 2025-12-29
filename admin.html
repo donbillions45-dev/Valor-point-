@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValorPoint - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container admin-container">
+        <div class="card">
+            <h1 id="adminWelcome">Admin Dashboard</h1>
+            <p class="message" id="adminMessage"></p>
+
+            <div id="adminContent">
+                <!-- User Search/Filter -->
+                <div class="admin-section">
+                    <h2>User Management</h2>
+                    <div class="input-group">
+                        <label for="userSearch">Search User by Email or Name</label>
+                        <input type="text" id="userSearch" placeholder="Enter email or name">
+                        <button class="btn primary-btn" id="searchUserBtn">Search</button>
+                    </div>
+                    <button class="btn secondary-btn" id="loadAllUsersBtn">Load All Users</button>
+
+                    <!-- User List -->
+                    <div class="user-list">
+                        <h3>Registered Users</h3>
+                        <ul id="usersTableBody">
+                            <li>Loading users...</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- User Detail / Edit Panel -->
+                <div class="admin-section user-detail-panel" style="display: none;">
+                    <h2>User Details: <span id="userDetailName"></span></h2>
+                    <p><strong>UID:</strong> <span id="userDetailUid"></span></p>
+                    <p><strong>Email:</strong> <span id="userDetailEmail"></span></p>
+                    <p><strong>Activated:</strong> <span id="userDetailActivated"></span></p>
+                    <p><strong>Balance:</strong> ₦<span id="userDetailBalance"></span></p>
+                    <p><strong>Referral Code:</strong> <span id="userDetailReferralCode"></span></p>
+                    <p><strong>Referred By:</strong> <span id="userDetailReferredBy"></span></p>
+                    <h3>Referrals (<span id="userDetailReferralCount"></span>)</h3>
+                    <ul id="userDetailReferralsList"></ul>
+
+                    <!-- Admin Actions -->
+                    <h3>Admin Actions</h3>
+                    <div class="action-group">
+                        <div class="input-group">
+                            <label for="balanceChangeAmount">Adjust Balance (₦)</label>
+                            <input type="number" id="balanceChangeAmount" placeholder="e.g., 1000">
+                        </div>
+                        <button class="btn primary-btn" id="updateBalanceBtn">Update Balance</button>
+                    </div>
+                    <button class="btn primary-btn" id="toggleActivationBtn">Toggle Account Activation</button>
+                    <button class="btn logout-btn" id="deleteUserBtn">Delete User</button>
+                    <button class="btn secondary-btn" id="closeUserDetailBtn">Close</button>
+                </div>
+
+                <!-- Other Admin Sections (e.g., Transactions, Withdrawals) - Placeholder -->
+                <div class="admin-section">
+                    <h2>Transaction Overview</h2>
+                    <p>View recent payments and withdrawals here.</p>
+                    <button class="btn secondary-btn">View All Transactions</button>
+                </div>
+
+            </div>
+            <button class="btn logout-btn" id="adminLogoutBtn">Logout</button>
+        </div>
+    </div>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValorPoint - Settings</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Account Settings</h1>
+            <p class="message" id="settingsMessage"></p>
+
+            <!-- Profile Picture Section -->
+            <div class="settings-section">
+                <h2>Profile Picture</h2>
+                <div class="profile-pic-container">
+                    <img id="profilePic" src="https://via.placeholder.com/150" alt="Profile Picture">
+                    <label for="profilePicUpload" class="upload-icon">
+                        <!-- Icon for upload, e.g., a camera or plus sign -->
+                        <span class="material-icons">add_a_photo</span>
+                    </label>
+                    <input type="file" id="profilePicUpload" accept="image/*" style="display: none;">
+                </div>
+                <button class="btn primary-btn" id="uploadPicBtn">Upload New Picture</button>
+            </div>
+
+            <!-- Name Section -->
+            <div class="settings-section">
+                <h2>Name</h2>
+                <div class="input-group">
+                    <label for="userName">Full Name</label>
+                    <input type="text" id="userName" placeholder="Your Full Name">
+                </div>
+                <button class="btn primary-btn" id="saveNameBtn">Save Name</button>
+            </div>
+
+            <!-- Other Settings Placeholder -->
+            <div class="settings-section">
+                <h2>Other Settings (Coming Soon)</h2>
+                <p>Manage your email preferences, password, or security settings here.</p>
+            </div>
+
+            <button class="btn secondary-btn" id="backToDashboardBtn">Back to Dashboard</button>
+        </div>
+    </div>
+    <!-- Google Icons for "add_a_photo" -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="module" src="settings.js"></script>
+</body>
+</html>

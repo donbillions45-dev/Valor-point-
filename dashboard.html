@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValorPoint - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<body>
+    <div class="container">
+        <!-- Top Navbar -->
+        <nav class="navbar">
+            <a href="dashboard.html" class="logo">ValorPoint</a>
+            <div class="user-info">
+                <img id="navbar-profile-pic" src="/img/avatar1.png" alt="Profile Picture" class="profile-pic">
+                <span id="navbar-user-name" class="user-name"></span>
+                  <div class="container">
+        <div class="card">
+            <h1 id="welcomeMessage">Welcome, User!</h1>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html" class="active"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Setting.html</span></a></li>
+                    <li><a href="#"><i class="fas fa-share-alt"></i> <span>Referrals</span></a></li>
+                    <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="card">
+                    <h2>Dashboard Overview</h2>
+                    <div class="user-details">
+                        <img id="dashboard-profile-pic" src="/img/avatar1.png" alt="Profile Picture" class="profile-pic-large">
+                        <div class="detail-group">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <strong>Full Name:</strong> <span id="user-full-name"></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <strong>Email:</strong> <span id="user-email"></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-wallet"></i>
+                                <strong>Balance:</strong> 0.00Naira<span id="account-balance"></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <strong>Joined:e.g;12dec,2026</strong> <span id="account-creation-date"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!<-- Additional dashboard widgets can be added here -->
+                <div class="card">
+                    <h2>Recent Activity</h2>
+                    <p>No recent activity to display.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
